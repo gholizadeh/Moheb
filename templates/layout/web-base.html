@@ -1,0 +1,115 @@
+{% extends 'layout/base.html' %}
+
+{% block extra_head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">  
+{% endblock %}
+
+{% block content %}
+<nav class="navbar align-items-center border-bottom">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center ">
+            <a href="#" class="navbar-brand m-0 textColor fw-bold brand">. LOGO .</a>
+            <div class="position-relative ms-4 d-none d-xl-inline-block">
+                <input class="searchInput bg-body-tertiary iconCursor ps-md-5 p-1 p-md-2 " type="search"
+                    placeholder="جستجو..." aria-label="Search">
+                <i class="searchIcon position-absolute iconCursor fa-solid fa-magnifying-glass"></i>
+            </div>
+
+        </div>
+        <div class="d-flex align-items-center">
+            <div class="d-none d-lg-block">
+                <ul class="d-flex m-0 list-unstyled ">
+                    <li class="nav-item iconChange   me-4 pt-2">
+                        <a href="#" class="nav-link text-center p-0">
+                            <div class=" d-flex align-items-center overflow-hidden changeWidth mx-auto">
+                                <i class="iconHeight mx-2 fa-solid fa-person-chalkboard"></i>
+                                <i class="iconHeight mx-2 fa-solid fa-person-chalkboard"></i>
+                            </div>
+                            <div class="smallFont textColor">کارگاه‌ها</div>
+                        </a>
+                    </li>
+                    <li class="nav-item iconChange  me-4 pt-2">
+                        <a href="#" class="nav-link text-center p-0">
+                            <div class=" d-flex align-items-center overflow-hidden changeWidth mx-auto">
+                                <i class="iconHeight mx-2 fa-solid fa-bullhorn"></i>
+                                <i class="iconHeight mx-2 fa-solid fa-bullhorn"></i>
+                            </div>
+                            <div class="smallFont textColor">اطلاعیه‌ها</div>
+                        </a>
+                    </li>
+                    <li class="nav-item iconChange  me-4 pt-2">
+                        <a href="#" class="nav-link text-center p-0">
+                            <div class=" d-flex align-items-center overflow-hidden changeWidth mx-auto">
+                                <i class="iconHeight mx-2 fa-solid fa-users-line"></i>
+                                <i class=" iconHeight mx-2 fa-solid fa-users-viewfinder"></i>
+                            </div>
+                            <div class="smallFont textColor">جلسات</div>
+                        </a>
+                    </li>
+                    <li class="nav-item iconChange  me-3 pt-2">
+                        <a href="#" class="nav-link text-center p-0">
+                            <div class=" d-flex align-items-center overflow-hidden changeWidth mx-auto">
+                                <i class="iconHeight mx-2 fa-regular fa-building"></i>
+                                <i class=" iconHeight mx-2 fa-solid fa-building"></i>
+                            </div>
+                            <div class="smallFont textColor">درباره مرکز</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="iconContainer"
+                class="d-flex justify-content-center align-items-center rounded-5 bg-light d-xl-none">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <button id="hostBtn" class="btn btn-sm m-sm-2 m-1 text-white a rounded-5 px-3 d-none d-lg-inline-block">
+                <i class="me-2 mb-1 fa-solid fa-blog"></i>
+                وبلاگ
+            </button>
+            <button id="loginBtn" class="btn btn-sm m-sm-2 m-1 bg-primary text-white rounded-5 px-sm-3 px-2">
+                <i class="me-2 mt-1 fa-solid fa-arrow-right-to-bracket"></i>
+                ورود
+            </button>
+        </div>
+    </div>
+</nav>
+<nav id="secondNav" class="bottom-0 position-fixed end-0 start-0">
+    <div class="d-lg-none">
+        <div class="container-fluid d-flex justify-content-between shadow pt-2">
+            <a href="#" class="text-center text-decoration-none textColor">
+                <div class="mb-1">
+                    <span class="bg-primary rounded-5 p-1 text-white">LOGO</span>
+                </div>
+                <div class="extraSmallFont active pb-1">TITLE</div>
+            </a>
+            <a href="#" class="text-decoration-none textColor  text-center">
+                <i class="iconHeight mb-1 fa-solid fa-person-chalkboard"></i>
+                <div class="extraSmallFont pb-1">کارگاه‌ها</div>
+            </a>
+            <a href="#" class="text-decoration-none textColor  text-center">
+                <i class="iconHeight mb-1 fa-solid fa-bullhorn"></i>
+                <div class="extraSmallFont pb-1">اطلاعیه‌ها</div>
+            </a>
+            <a href="#" class="text-decoration-none textColor  text-center">
+                <i class="iconHeight mb-1 fa-solid fa-users-viewfinder"></i>
+                <div class="extraSmallFont pb-1">جلسات</div>
+            </a>
+            <a href="#" class="text-decoration-none textColor  text-center">
+                <i class=" iconHeight mb-1 fa-solid fa-building"></i>
+                <div class="extraSmallFont pb-1">درباره مرکز</div>
+            </a>
+            <a href="#" class="text-decoration-none textColor  text-center">
+                <i class=" iconHeight mb-1 fa-solid fa-blog"></i>
+                <div class="extraSmallFont pb-1">وبلاگ</div>
+            </a>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        {% block main_content %}
+
+        {% endblock %}
+    </div>
+</main>
+{% endblock %} 
