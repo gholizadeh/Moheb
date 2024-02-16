@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-# Create your views here.
+from django.contrib.auth.views import LoginView
+from .forms import LoginForm
 
 def home(request):
-    # Page from the theme 
     return render(request, 'pages/home.html')
+
+class CustomAdminLoginView(LoginView):
+    authentication_form = LoginForm
+    template_name = 'admin/login.html'  # Specify your custom login template

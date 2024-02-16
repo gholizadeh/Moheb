@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Samim-Bold;
+    src: url('../font/samim-font-v2.0.1/Samim-Bold.eot');
+    src: url('../font/samim-font-v2.0.1/Samim-Bold.eot?#iefix') format('Samim-Bold-opentype'),
+         url('../font/samim-font-v2.0.1/Samim-Bold.woff') format('woff'),
+         url('../font/samim-font-v2.0.1/Samim-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Samim-Bold', sans-serif;
+}

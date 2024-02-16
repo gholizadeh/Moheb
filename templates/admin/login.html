@@ -1,0 +1,54 @@
+{% extends 'layout/base.html' %}
+
+{% block extra_head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">  
+{% endblock %}
+
+{% block content %}
+    <main class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post">
+                    <span class="login100-form-title pb-4">
+                        خوش آمدید
+                    </span>
+                    <span class="login100-form-title pb-4">
+                        ..LOGO..
+                    </span>
+
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger alert-sm" role="alert"> {{ error }} </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+                        {{ form.email }}
+                        <span class="focus-input100" data-placeholder="email"></span>
+                    </div>
+                
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <span class="btn-show-pass">
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
+                        {{ form.password }}
+                        <span class="focus-input100" data-placeholder="password"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="submit" class="login100-form-btn">
+                                ورود
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+<script src="{% static 'js/login.js' %}" crossorigin="anonymous"></script>
+
+{% endblock %}
